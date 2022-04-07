@@ -12,10 +12,18 @@ namespace ExtendedUI
         [SerializeField] private GameLog _log;
         [SerializeField] private InputField _inputField;
         [SerializeField] private float _messageLifeTime = 10;
+        [SerializeField] private GameLogCommandList _commands;
+        [SerializeField] private char _commandChar;
 
         public void Message(string text)
         {
             if (string.IsNullOrEmpty(text)) return;
+            if(text[0] == _commandChar)
+            {
+                string commandName = text.Remove(0, 1);
+                _commands.TryInvokeCommand(commandName);
+                return;
+            }
             _log.LogMessage(text, _senderName, _messageLifeTime);
             _inputField.text = "";
         }

@@ -172,6 +172,8 @@ MonoBehaviour:
   _log: {fileID: 2866051553493556811}
   _inputField: {fileID: 2866051552458259932}
   _messageLifeTime: 60
+  _commands: {fileID: 11400000, guid: 0f805368cec2f4748a957f84a5726580, type: 2}
+  _commandChar: 47
 --- !u!1 &2866051552797821350
 GameObject:
   m_ObjectHideFlags: 0
