@@ -21,7 +21,10 @@ namespace ExtendedUI
             if(text[0] == _commandChar)
             {
                 string commandName = text.Remove(0, 1);
-                _commands.TryInvokeCommand(commandName);
+                string[] args = commandName.Split(' ');
+                commandName = args[0];
+                _commands.TryInvokeCommand(commandName, args);
+                _inputField.text = "";
                 return;
             }
             _log.LogMessage(text, _senderName, _messageLifeTime);

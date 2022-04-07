@@ -356,7 +356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3362237483941404336, guid: f485a89aa52e6a04ebfa9bac7f8c40ec, type: 3}
       propertyPath: m_Name
-      value: Radial Slider TMP
+      value: RadialSliderTMP
       objectReference: {fileID: 0}
     - target: {fileID: 3362237483941404337, guid: f485a89aa52e6a04ebfa9bac7f8c40ec, type: 3}
       propertyPath: m_Pivot.x
@@ -545,6 +545,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2866051553513650941, guid: 8cdd8bb44cb168040a3860a9f2b9a2f9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866051553719072534, guid: 8cdd8bb44cb168040a3860a9f2b9a2f9, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866051553719072534, guid: 8cdd8bb44cb168040a3860a9f2b9a2f9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866051553719072534, guid: 8cdd8bb44cb168040a3860a9f2b9a2f9, type: 3}
+      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

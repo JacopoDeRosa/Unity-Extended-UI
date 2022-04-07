@@ -2,18 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Command List", menuName = "New Command List")]
-public class GameLogCommandList : ScriptableObject
-{
-    [SerializeField]
-    private  List<GameLogCommand> _commands;
 
-    public void TryInvokeCommand(string name)
+namespace ExtendedUI
+{
+    [CreateAssetMenu(fileName = "New Command List", menuName = "New Command List")]
+    public class GameLogCommandList : ScriptableObject
     {
-        var command = new GameLogCommand(name);
-        if (_commands.Contains(command))
+        [SerializeField]
+        private List<GameLogCommand> _commands;
+
+        public void TryInvokeCommand(string name, string[] args)
         {
-            _commands.Find(x => x.Equals(command)).Invoke();
+
+            var command = _commands.Find(x => x.Equals(name));
+            if (command != null)
+            {
+                command.Invoke(args);
+            }
         }
     }
 }

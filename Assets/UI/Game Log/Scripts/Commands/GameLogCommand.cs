@@ -4,29 +4,25 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-[Serializable]
-public class GameLogCommand: IEquatable<GameLogCommand>
+namespace ExtendedUI
 {
-    [SerializeField] private string _name;
-
-
-    public string Name { get => _name; }
-
-    public UnityEvent onInvoke;
-
-    public GameLogCommand(string name)
+    [CreateAssetMenu(fileName = "New Log Command", menuName = "New Log Command")]
+    public class GameLogCommand : ScriptableObject
     {
-        _name = name;
-    }
+        [SerializeField] private string _name;
 
-    public bool Equals(GameLogCommand other)
-    {
-        return other.Name == _name;
-    }
+        public string Name { get => _name; }
 
-    public virtual void Invoke()
-    {
-        onInvoke.Invoke();
-        Debug.Log("Command " + _name + " was called.");
+        public bool Equals(string name)
+        {
+            return name == _name;
+        }
+
+        public virtual void Invoke(string[] args)
+        {
+#if UNITY_EDITOR
+            Debug.Log("Command " + _name + " was called.");
+#endif
+        }
     }
 }
