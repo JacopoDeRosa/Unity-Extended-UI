@@ -6,7 +6,6 @@ using UnityEngine.Events;
 
 namespace ExtendedUI
 {
-    [CreateAssetMenu(fileName = "New Log Command", menuName = "New Log Command")]
     public class GameLogCommand : ScriptableObject
     {
         [SerializeField] private string _name;

@@ -16,5 +16,10 @@ namespace ExtendedUI
             string output = "[" +  time + "]" + " [" +  sender + "]" + ": " + message ;
             _textObject.text = output;
         }
+
+        public void SetMessageColor(Color color)
+        {
+            _textObject.color = color;
+        }
     }
 }
